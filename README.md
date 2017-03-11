@@ -1,13 +1,13 @@
 # HyperIterator
 
+**Caution: this gem monkey patches Ruby's `Array` class.**
+
 [Inspired by Ruby Performance Optimization](https://media.pragprog.com/titles/adrpo/iterators.pdf), 
 HyperIterator is reimplementation of Ruby iterators in Ruby, designed to address performance 
 drawbacks from native implementations, mainly in memory usage.
 
 The main idea is to reduce objects created during iteration, and remove objects from the array while
 iterating to speed up garbage collection.
-
-**Caution: this gem monkey patches Ruby's `Array` class.**
 
 ## Installation
 
@@ -31,6 +31,51 @@ These methods work just as the non bang version, except that, it **WILL MUTATE**
 by **REMOVING ALL** the elements from it.
 
 - `each_slice!`
+
+## Benchmark
+
+Run this command to benchmark HyperIterator methods.
+```
+rake benchmark
+```
+
+Example report
+
+```
+---------------------------------------------------------
+---------------------- each_slice! ----------------------
+---------------------------------------------------------
+------------------ Garbage Collection -------------------
+Array#slice
+----------------------
+100 100 100 100 100 100 100 100 100 100 100 100 100
+
+Array#slice!
+----------------------
+100 92 84 76 68 60 52 44 36 28 20 12 4
+---------------------------------------------------------
+-------------------- Objects Created --------------------
+Array#slice
+----------------------
+# of arrays: 126
+# of nodes: 2
+
+Array#slice!
+----------------------
+# of arrays: 125
+# of nodes: 0
+---------------------------------------------------------
+--------------- Execution Time Comparison ---------------
+Rehearsal -----------------------------------------------
+each_slice    0.040000   0.000000   0.040000 (  0.049524)
+each_slice!   0.040000   0.010000   0.050000 (  0.047753)
+-------------------------------------- total: 0.090000sec
+
+                  user     system      total        real
+each_slice    0.040000   0.010000   0.050000 (  0.048487)
+each_slice!   0.040000   0.010000   0.050000 (  0.052009)
+---------------------------------------------------------
+```
 
 ## Development
 
