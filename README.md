@@ -21,9 +21,9 @@ Or install it yourself as:
 
     $ gem install hyper_iterator
 
-## Usage
+## Available Methods (adding more)
 
-TODO: Write usage instructions here
+- `each_slice!`
 
 ## Development
 
