@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/EdmundLeex/hyper_iterator.svg?branch=master)](https://travis-ci.org/EdmundLeex/hyper_iterator)
+
 # HyperIterator
 
 **Caution: this gem monkey patches Ruby's `Array` class.**
