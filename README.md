@@ -4,7 +4,7 @@
 
 **Caution: this gem monkey patches Ruby's `Array` class.**
 
-[Inspired by Ruby Performance Optimization](https://media.pragprog.com/titles/adrpo/iterators.pdf), 
+Inspired by [Ruby Performance Optimization](https://media.pragprog.com/titles/adrpo/iterators.pdf), 
 HyperIterator is reimplementation of Ruby iterators in Ruby, designed to address performance 
 drawbacks from native implementations, mainly in memory usage.
 
