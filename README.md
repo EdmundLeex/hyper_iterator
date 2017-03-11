@@ -8,8 +8,9 @@ Inspired by [Ruby Performance Optimization](https://media.pragprog.com/titles/ad
 HyperIterator is reimplementation of Ruby iterators in Ruby, designed to address performance 
 drawbacks from native implementations, mainly in memory usage.
 
-The main idea is to reduce objects created during iteration, and remove objects from the array while
-iterating to speed up garbage collection.
+The main idea is to remove objects from array during iteration. In iteration of large array, 
+this would allow garbage collection to happen before the iteration finishes, therefore reduce 
+memory usage.
 
 ## Installation
 
