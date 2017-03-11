@@ -55,4 +55,37 @@ class EachSliceBangTest < Minitest::Test
 
     assert return_val.nil?
   end
+
+  def test_that_it_slices_and_yields_block_the_same_as_each_slice
+    arr_1 = (1..10).to_a
+    arr_2 = (1..10).to_a
+    new_arr_1 = []
+    new_arr_2 = []
+    sliced_arr_1 = []
+    sliced_arr_2 = []
+    slice_size = rand(1..5)
+
+    arr_1.each_slice(slice_size) do |slice|
+      sliced_arr_1 << slice
+      slice.each { |el| new_arr_1 << el * el }
+    end
+
+    arr_2.each_slice!(slice_size) do |slice|
+      sliced_arr_2 << slice
+      slice.each { |el| new_arr_2 << el * el }
+    end
+
+    assert new_arr_1 == new_arr_2
+    assert sliced_arr_1 == sliced_arr_2
+  end
+
+  def test_that_it_does_not_override_each_slice
+    arr = (1..10).to_a
+    arr_size = arr.size
+
+    slice_size = rand(1..5)
+    return_val = arr.each_slice(slice_size) { |slice| nil }
+
+    assert arr.size == arr_size
+  end
 end
