@@ -84,7 +84,7 @@ class EachSliceBangTest < Minitest::Test
     arr_size = arr.size
 
     slice_size = rand(1..5)
-    return_val = arr.each_slice(slice_size) { |slice| nil }
+    arr.each_slice(slice_size) { |slice| nil }
 
     assert arr.size == arr_size
   end
