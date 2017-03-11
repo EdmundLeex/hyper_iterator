@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class EachSliceBangTest < Minitest::Test
+class EachBangTest < Minitest::Test
   def test_that_it_yield_block
     arr = (1..10).to_a
     arr_dup = arr.dup
@@ -44,7 +44,7 @@ class EachSliceBangTest < Minitest::Test
     assert new_arr_1 == new_arr_2
   end
 
-  def test_that_it_does_not_override_each_slice
+  def test_that_it_does_not_override_each
     arr = (1..10).to_a
     arr_size = arr.size
 

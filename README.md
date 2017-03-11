@@ -33,6 +33,7 @@ These methods work just as the non bang version, except that, it **WILL MUTATE**
 by **REMOVING ALL** the elements from it.
 
 - `each_slice!`
+- `each!`
 
 ## Benchmark
 

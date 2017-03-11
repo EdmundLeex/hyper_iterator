@@ -11,7 +11,7 @@ puts '------------------ Garbage Collection -------------------'
 
 slize_size = rand(1..10)
 
-puts 'Array#slice'
+puts 'Array#each_slice'
 puts '----------------------'
 
 arr = Array.new(100) { Thing.new }
@@ -26,7 +26,7 @@ end
 puts
 puts
 
-puts 'Array#slice!'
+puts 'Array#each_slice!'
 puts '----------------------'
 
 arr = Array.new(100) { Thing.new }
@@ -51,7 +51,7 @@ arr.each_slice(slize_size) do |slice|
 end
 after = ObjectSpace.count_objects
 
-puts 'Array#slice'
+puts 'Array#each_slice'
 puts '----------------------'
 puts "# of arrays: %d" % (after[:T_ARRAY] - before[:T_ARRAY])
 puts "# of nodes: %d" % (after[:T_NODE] - before[:T_NODE])
@@ -65,7 +65,7 @@ arr.each_slice!(slize_size) do |slice|
 end
 after = ObjectSpace.count_objects
 
-puts 'Array#slice!'
+puts 'Array#each_slice!'
 puts '----------------------'
 puts "# of arrays: %d" % (after[:T_ARRAY] - before[:T_ARRAY])
 puts "# of nodes: %d" % (after[:T_NODE] - before[:T_NODE])

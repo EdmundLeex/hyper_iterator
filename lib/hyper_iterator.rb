@@ -4,7 +4,8 @@ require_all 'lib/iterators/**/*.rb'
 
 module HyperIterator
   AVAILABLE_METHODS = [
-    :each_slice!
+    :each_slice!,
+    :each!
   ].freeze
 end
 
