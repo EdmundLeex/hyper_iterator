@@ -5,7 +5,9 @@ class HighPerformanceIteratorTest < Minitest::Test
     refute_nil ::HighPerformanceIterator::VERSION
   end
 
-  def test_it_does_something_useful
-    assert false
+  def test_that_it_makes_iterators_available_in_array_class
+    assert HighPerformanceIterator::AVAILABLE_METHODS.all? do |mth|
+      Array.respond_to(mth)
+    end
   end
 end

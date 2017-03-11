@@ -3,7 +3,9 @@ require_relative "./high_performance_iterator/version"
 require_all 'lib/iterators/**/*.rb'
 
 module HighPerformanceIterator
-  # Your code goes here...
+  AVAILABLE_METHODS = [
+    :each_slice!
+  ].freeze
 end
 
 class Array
