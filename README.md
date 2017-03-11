@@ -1,8 +1,9 @@
 # HyperIterator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hyper_iterator`. To experiment with that code, run `bin/console` for an interactive prompt.
+HyperIterator is reimplementation of Ruby iterators in Ruby, designed to address 
+performance drawbacks from native implementations, mainly in memory usage.
 
-TODO: Delete this and the text above, and describe your gem
+**Caution: this gem monkey patches Ruby's `Array` class.**
 
 ## Installation
 
