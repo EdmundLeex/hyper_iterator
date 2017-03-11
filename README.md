@@ -1,7 +1,11 @@
 # HyperIterator
 
-HyperIterator is reimplementation of Ruby iterators in Ruby, designed to address 
-performance drawbacks from native implementations, mainly in memory usage.
+[Inspired by Ruby Performance Optimization](https://media.pragprog.com/titles/adrpo/iterators.pdf), 
+HyperIterator is reimplementation of Ruby iterators in Ruby, designed to address performance 
+drawbacks from native implementations, mainly in memory usage.
+
+The main idea is to reduce objects created during iteration, and remove objects from the array while
+iterating to speed up garbage collection.
 
 **Caution: this gem monkey patches Ruby's `Array` class.**
 
@@ -22,6 +26,9 @@ Or install it yourself as:
     $ gem install hyper_iterator
 
 ## Available Methods (adding more)
+
+These methods work just as the non bang version, except that, it **WILL MUTATE** the original array 
+by **REMOVING ALL** the elements from it.
 
 - `each_slice!`
 
