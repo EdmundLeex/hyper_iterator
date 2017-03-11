@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'high_performance_iterator/version'
+require 'hyper_iterator/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "high_performance_iterator"
-  spec.version       = HighPerformanceIterator::VERSION
+  spec.name          = "hyper_iterator"
+  spec.version       = HyperIterator::VERSION
   spec.authors       = ["Edmund Li"]
   spec.email         = ["edmund.xz.lee@gmail.com"]
 

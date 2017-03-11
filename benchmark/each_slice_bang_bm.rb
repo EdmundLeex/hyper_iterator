@@ -1,5 +1,5 @@
 require 'benchmark'
-require_relative '../lib/high_performance_iterator'
+require_relative '../lib/hyper_iterator'
 
 arr = (1..10).to_a
 
