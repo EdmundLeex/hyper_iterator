@@ -1,12 +1,15 @@
 require 'benchmark'
 require_relative '../lib/hyper_iterator'
 
+GC.disable
+
 puts '---------------------------------------------------------'
 puts '---------------------- each_slice! ----------------------'
 puts '---------------------------------------------------------'
 puts '--------------------- Memory Usage ----------------------'
 
-arr = (1..10).to_a
+class Thing; end
+arr = Array.new(1000) { Thing.new }
 
 before = ObjectSpace.count_objects
 arr.each_slice(2) do |slice|
@@ -20,7 +23,7 @@ puts "# of nodes: %d" % (after[:T_NODE] - before[:T_NODE])
 
 puts
 
-arr = (1..10).to_a
+arr = Array.new(1000) { Thing.new }
 
 before = ObjectSpace.count_objects
 arr.each_slice!(2) do |slice|
