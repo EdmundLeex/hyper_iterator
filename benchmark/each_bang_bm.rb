@@ -71,8 +71,9 @@ puts "# of nodes: %d" % (after[:T_NODE] - before[:T_NODE])
 puts '---------------------------------------------------------'
 puts '--------------- Execution Time Comparison ---------------'
 
-n = 50000
-arr = (1..10).to_a
+GC.enable
+n = 500_000
+arr = Array.new(1000) { Thing.new }
 
 Benchmark.bmbm(7) do |x|
   x.report('each') { n.times { arr.each { |el| nil } } }
