@@ -14,7 +14,9 @@ memory usage.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+*This is in prepublish stage, therefore not available as a gem yet. More testing will be conducted.*
+
+<!-- Add this line to your application's Gemfile:
 
 ```ruby
 gem 'hyper_iterator'
@@ -27,7 +29,7 @@ And then execute:
 Or install it yourself as:
 
     $ gem install hyper_iterator
-
+ -->
 ## Available Methods (adding more)
 
 These methods work just as the non bang version, except that, it **WILL MUTATE** the original array 
