@@ -74,8 +74,8 @@ puts '---------------------------------------------------------'
 puts '--------------- Execution Time Comparison ---------------'
 
 GC.enable
-n = 500_000
-arr = Array.new(1000) { Thing.new }
+n = 10
+arr = Array.new(1_000_000) { Thing.new }
 
 Benchmark.bmbm(7) do |x|
   x.report('each_slice') { n.times { arr.each_slice(2) { |slice| nil } } }
