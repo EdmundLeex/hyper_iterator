@@ -68,17 +68,17 @@ puts '----------------------'
 puts "# of arrays: %d" % (after[:T_ARRAY] - before[:T_ARRAY])
 puts "# of nodes: %d" % (after[:T_NODE] - before[:T_NODE])
 
-puts '---------------------------------------------------------'
-puts '--------------- Execution Time Comparison ---------------'
+# puts '---------------------------------------------------------'
+# puts '--------------- Execution Time Comparison ---------------'
 
-GC.enable
-n = 10
-arr = Array.new(1_000_000) { Thing.new }
+# GC.enable
+# n = 10
+# arr = Array.new(1_000_000) { Thing.new }
 
-Benchmark.bmbm(7) do |x|
-  x.report('each!') { n.times { arr.each! { |el| nil } } }
-  x.report('each')  { n.times { arr.each  { |el| nil } } }
-end
+# Benchmark.bmbm(7) do |x|
+#   x.report('each!') { n.times { arr.each! { |el| nil } } }
+#   x.report('each')  { n.times { arr.each  { |el| nil } } }
+# end
 
 puts '---------------------------------------------------------'
 
