@@ -8,3 +8,4 @@ memory. Given that with 4MB allocation, the current [./benchmark/each.rb](benchm
 and [./benchmark/each_bang.rb](benchmark/each_bang.rb) is running at the edge of using up 
 all memory, creating more objects supposedly would kill the process using `each` while 
 `each!` should survive.
+- `each_slice!` implementation is very slow. Possibly because `slice!` is O(n)?
