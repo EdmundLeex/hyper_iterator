@@ -14,7 +14,8 @@ memory usage.
 
 ## Installation
 
-*This is in prepublish stage, therefore not available as a gem yet. More testing will be conducted.*
+*This is in experimental stage, therefore not available as a gem yet. More testing will be conducted.*
+*You can see my [updates in here](UPDATE.md)*
 
 <!-- Add this line to your application's Gemfile:
 
