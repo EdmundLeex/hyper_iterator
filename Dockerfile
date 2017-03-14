@@ -4,7 +4,6 @@ RUN \
   apt-get install -y ruby
 RUN ruby -v
 RUN gem install require_all
-# ADD . ./
 CMD ruby ./benchmark/bm_all.rb
 
-# docker run -v /host/directory:/container/directory -other -options image_name command_to_run
+# docker run -m=50m -v `pwd`:`pwd` -w `pwd` hyper_iterator

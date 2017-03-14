@@ -76,8 +76,8 @@ n = 10
 arr = Array.new(1_000_000) { Thing.new }
 
 Benchmark.bmbm(7) do |x|
-  x.report('each') { n.times { arr.each { |el| nil } } }
-  x.report('each!') { n.times { arr.each { |el| nil } } }
+  x.report('each!') { n.times { arr.each! { |el| nil } } }
+  x.report('each')  { n.times { arr.each  { |el| nil } } }
 end
 
 puts '---------------------------------------------------------'

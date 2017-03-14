@@ -78,8 +78,8 @@ n = 10
 arr = Array.new(1_000_000) { Thing.new }
 
 Benchmark.bmbm(7) do |x|
-  x.report('each_slice') { n.times { arr.each_slice(2) { |slice| nil } } }
-  x.report('each_slice!') { n.times { arr.each_slice(2) { |slice| nil } } }
+  x.report('each_slice')  { n.times { arr.each_slice(2)  { |slice| nil } } }
+  x.report('each_slice!') { n.times { arr.each_slice!(2) { |slice| nil } } }
 end
 
 puts '---------------------------------------------------------'
