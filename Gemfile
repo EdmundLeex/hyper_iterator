@@ -5,6 +5,7 @@ gemspec
 
 gem 'get_process_mem'
 gem 'ruby-prof'
+gem 'memory_profiler'
 
 group :test do
   gem 'minitest-reporters'
