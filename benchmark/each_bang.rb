@@ -1,4 +1,4 @@
-require 'memory_profiler'
+require 'benchmark'
 require_relative '../lib/hyper_iterator'
 $stdout.sync = true
 
@@ -8,13 +8,11 @@ puts '------------------------- each! -------------------------'
 
 # GC.enable
 n = 1
-arr = Array.new(1_000) { '-' * 2000 }
+arr = Array.new(1_000) { '-' * 3000 }
 
-report = MemoryProfiler.report do
-  n.times { arr.each! { |el| sleep(0.1) } }
+Benchmark.bmbm(7) do |bm|
+  bm.report('each!') { n.times { arr.each! { |el| '-' * 2 } } }
 end
-
-report.pretty_print
 
 puts '---------------------------------------------------------'
 
