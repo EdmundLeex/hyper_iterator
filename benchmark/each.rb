@@ -1,9 +1,10 @@
 require 'benchmark'
 require_relative '../lib/hyper_iterator'
 $stdout.sync = true
+
 puts '---------------------------------------------------------'
-puts '--------------- Execution Time Comparison ---------------'
 puts '------------------------- each --------------------------'
+puts '---------------------- Should Fail ----------------------'
 
 # GC.enable
 n = 1

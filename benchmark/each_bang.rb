@@ -3,8 +3,8 @@ require_relative '../lib/hyper_iterator'
 $stdout.sync = true
 
 puts '---------------------------------------------------------'
-puts '--------------- Execution Time Comparison ---------------'
 puts '------------------------- each! -------------------------'
+puts '---------------------- Should Pass ----------------------'
 
 # GC.enable
 n = 1
