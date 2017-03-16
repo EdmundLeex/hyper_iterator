@@ -1,5 +1,5 @@
 require 'benchmark'
-require_relative '../lib/hyper_iterator'
+require_relative '../../lib/hyper_iterator'
 $stdout.sync = true
 
 puts 'Array#each'
