@@ -1,5 +1,5 @@
 require 'benchmark'
-require_relative '../lib/hyper_iterator'
+require_relative '../../lib/hyper_iterator'
 
 class Thing; end
 
@@ -78,8 +78,20 @@ n = 10
 arr = Array.new(1_000_000) { Thing.new }
 
 Benchmark.bmbm(7) do |x|
-  x.report('each_slice')  { n.times { arr.each_slice(2)  { |slice| nil } } }
-  x.report('each_slice!') { n.times { arr.each_slice!(2) { |slice| nil } } }
+  x.report('each_slice')  do
+    n.times do
+      arr.each_slice(slize_size) do |slice|
+        slice.each { |el| nil }
+      end
+    end
+  end
+  x.report('each_slice!') do
+    n.times do
+      arr.each_slice!(slize_size) do |slice|
+        slice.each { |el| nil }
+      end
+    end
+  end
 end
 
 puts '---------------------------------------------------------'
