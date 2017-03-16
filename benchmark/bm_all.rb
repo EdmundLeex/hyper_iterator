@@ -1,1 +1,0 @@
-Dir['./benchmark/*'].each { |f| require f }

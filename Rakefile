@@ -8,7 +8,7 @@ Rake::TestTask.new(:test) do |t|
 end
 
 task :benchmark do
-  Dir['./benchmark/*'].each { |f| ruby f }
+  Dir['./benchmark/*.rb'].each { |f| ruby f }
 end
 
 task :default => :test
