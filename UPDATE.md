@@ -1,3 +1,10 @@
+### 3/16/17
+
+- Tweak the two benchmark file and made it work
+- This time around, I am dynamically creating new arrays and counting the number of 
+iterations before it blows up. And it's clear that the `each!` can complete more iteration 
+before it uses all the memory
+
 ### 3/14/17
 
 - Testing benchmark in containerized environment to simulate limited allocated memory.
