@@ -4,6 +4,9 @@
 - This time around, I am dynamically creating new arrays and counting the number of 
 iterations before it blows up. And it's clear that the `each!` can complete more iteration 
 before it uses all the memory
+- Changed `each_slice!` implementation to avoid using `slice!`. The execution time comp 
+looks good (seems even faster than the native `each_slice`). And the memory usage comp 
+looks very good too!
 
 ### 3/14/17
 
