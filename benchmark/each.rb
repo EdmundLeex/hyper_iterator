@@ -1,19 +1,22 @@
-require 'benchmark'
+# require 'benchmark'
 require_relative '../lib/hyper_iterator'
 $stdout.sync = true
 
-puts '---------------------------------------------------------'
-puts '------------------------- each --------------------------'
-puts '---------------------- Should Fail ----------------------'
+puts 'Array#each'
+puts 'creating array'
+arr = Array.new(10000) { '-' * 100 }
+arr_1 = []
+puts 'finished creating array'
+puts 'each iteration begins'
 
-# GC.enable
-n = 1
-arr = Array.new(1_000) { '-' * 3000 }
-
-Benchmark.bmbm(7) do |bm|
-  bm.report('each') { n.times { arr.each  { |el| '-' * 2 } } }
+i = 0
+arr.each do |el|
+  new_el = '+' * 100
+  arr_1 << new_el
+  # i += 1
+  # print "#{i} "
+  # sleep(0.1)
 end
-
-puts '---------------------------------------------------------'
+puts 'finished iteration'
 
 puts

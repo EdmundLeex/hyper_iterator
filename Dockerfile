@@ -7,8 +7,7 @@ RUN \
 RUN ruby -v
 RUN gem install require_all
 RUN gem install memory_profiler
-CMD \
-  ruby ./benchmark/each_bang.rb && \
-  ruby ./benchmark/each.rb
+# CMD \
+#   ruby ./benchmark/each.rb
 
 # docker run -m=50m -v `pwd`:`pwd` -w `pwd` hyper_iterator
