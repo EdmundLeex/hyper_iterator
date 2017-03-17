@@ -33,11 +33,20 @@ Or install it yourself as:
  -->
 ## Available Methods (adding more)
 
+- `each_slice!`
+- `each!`
+
+## Gotcha
+
 These methods work just as the non bang version, except that, it **WILL MUTATE** the original array 
 by **REMOVING ALL** the elements from it.
 
-- `each_slice!`
-- `each!`
+```ruby
+arr = (1..10).to_a
+arr.each! { |el| ... }
+# After the iteration, the arr is empty!
+# arr => []
+```
 
 ## Benchmark
 
