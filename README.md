@@ -46,7 +46,7 @@ by **REMOVING ALL** the elements from it.
 rake benchmark
 ```
 
-Example report
+#### Example report
 
 ```
 ---------------------------------------------------------
@@ -93,6 +93,64 @@ for this.
 2. Go to the `Dockerfile`, and pick a Ruby version of your choice
 3. Run `bin/setup` in your command line
 4. Run `bin/bm` in your command line
+
+#### Methodology
+
+The native implementation (non bang version) retains the entire array. So if we keep on adding objects to 
+memory, it will blow up pretty quickly (given the memory is limited).
+
+While using the bang version in this gem, the refernce to the objects store in the array will be removed. 
+So the Garbage Collector (GC) can see them as removable objects and clean them up.
+
+The test code simply creates duplicate object as it iterates. Since the bang version iterator keeps removing 
+the references, the memory gets to recycle itself. In this repot, it will show as more iterations compare 
+to the non bang version.
+
+This is because as the memory gets freed up, we just have more rooms to store new objects, until the GC is 
+not freeing up memory fast enough.
+
+FYI: In this test, the empty array (created from every iteration to store the new objects) is also otaking 
+up more space. If you pop the empty array off (see [./benchmark/memory_bm/each_bang.rb](./benchmark/memory_bm/each_bang.rb)), 
+you can get a lot more iterations!
+
+#### Example report
+
+- #i is the nth iteration
+- The rest is time spent in execution
+
+```
+----------------- Array#each ------------------
+#i    user      system      total       real
+0   0.010000   0.000000   0.010000 (  0.043329)
+1   0.000000   0.010000   0.010000 (  0.010112)
+2   0.000000   0.000000   0.000000 (  0.025059)
+3   0.000000   0.000000   0.000000 (  0.010436)
+4   0.000000   0.000000   0.000000 (  0.008007)
+5   0.000000   0.010000   0.010000 (  0.009692)
+6   0.000000   0.010000   0.010000 (  0.050283)
+7
+----------------- Array#each! -----------------
+#i    user      system      total       real
+0   0.000000   0.000000   0.000000 (  0.004570)
+1   0.010000   0.000000   0.010000 (  0.006715)
+2   0.000000   0.010000   0.010000 (  0.040050)
+3   0.010000   0.000000   0.010000 (  0.009338)
+4   0.000000   0.000000   0.000000 (  0.006622)
+5   0.000000   0.010000   0.010000 (  0.019370)
+6   0.000000   0.000000   0.000000 (  0.012097)
+7   0.000000   0.010000   0.010000 (  0.025825)
+8   0.000000   0.010000   0.010000 (  0.014587)
+9   0.000000   0.010000   0.010000 (  0.014893)
+10   0.000000   0.000000   0.000000 (  0.026595)
+11   0.000000   0.000000   0.000000 (  0.012371)
+12   0.010000   0.000000   0.010000 (  0.023964)
+13   0.000000   0.000000   0.000000 (  0.007783)
+14   0.000000   0.000000   0.000000 (  0.004344)
+15   0.010000   0.020000   0.030000 (  0.119632)
+16   0.000000   0.010000   0.010000 (  0.010222)
+17   0.000000   0.000000   0.000000 (  0.009091)
+18 %
+```
 
 ## Development
 
