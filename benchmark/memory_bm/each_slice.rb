@@ -2,12 +2,12 @@ require 'benchmark'
 require_relative '../../lib/hyper_iterator'
 $stdout.sync = true
 
-puts 'Array#each_slice'
-puts 'creating array'
+puts
+puts '--------------- Array#each_slice --------------'
+puts '#i    user      system      total       real'
+
 base_arr = Array.new(10000) { '-' * 10 }
 arrs = [base_arr]
-puts 'finished creating base array'
-puts 'each iteration begins'
 
 i = 0
 while true
