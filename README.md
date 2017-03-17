@@ -117,6 +117,7 @@ you can get a lot more iterations!
 
 - #i is the nth iteration
 - The rest is time spent in execution
+- The last line is empty because memory blew up
 
 ```
 ----------------- Array#each ------------------
