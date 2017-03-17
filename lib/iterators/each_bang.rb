@@ -1,7 +1,7 @@
 module HyperIterator
-  def each!(&blk)
+  def each!
     while count > 0
-      blk.call(shift)
+      yield shift
     end
     nil
   end

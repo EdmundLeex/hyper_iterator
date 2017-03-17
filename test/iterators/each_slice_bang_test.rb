@@ -88,4 +88,10 @@ class EachSliceBangTest < Minitest::Test
 
     assert arr.size == arr_size
   end
+
+  def test_that_it_rails_error_if_not_block_given
+    arr = (1..10).to_a
+
+    assert_raises(LocalJumpError) { arr.each_slice!(2) }
+  end
 end
