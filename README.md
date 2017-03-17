@@ -41,7 +41,7 @@ by **REMOVING ALL** the elements from it.
 
 ## Benchmark
 
-Run this command to benchmark HyperIterator methods.
+### For basic benchmarks
 ```
 rake benchmark
 ```
@@ -83,6 +83,16 @@ each_slice    0.040000   0.010000   0.050000 (  0.048487)
 each_slice!   0.040000   0.010000   0.050000 (  0.052009)
 ---------------------------------------------------------
 ```
+
+### Memory Benchmark
+
+To eliminate the variable of different machines, you will need to install [Docker](https://docs.docker.com/engine/installation/) 
+for this.
+
+1. Go to [Docker](https://docs.docker.com/engine/installation/) to download and install Docker
+2. Go to the `Dockerfile`, and pick a Ruby version of your choice
+3. Run `bin/setup` in your command line
+4. Run `bin/bm` in your command line
 
 ## Development
 
