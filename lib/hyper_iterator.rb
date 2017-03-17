@@ -1,6 +1,5 @@
-require 'require_all'
 require_relative "./hyper_iterator/version"
-require_all 'lib/iterators/**/*.rb'
+Dir['./lib/iterators/*.rb'].each { |f| require f }
 
 module HyperIterator
   AVAILABLE_METHODS = [
