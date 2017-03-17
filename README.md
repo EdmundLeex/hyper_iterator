@@ -14,10 +14,10 @@ memory usage.
 
 ## Installation
 
-*This is in experimental stage, therefore not available as a gem yet. More testing will be conducted.*
+*This is in experimental stage. More testing will be conducted.*
 *You can see my [updates in here](UPDATE.md)*
 
-<!-- Add this line to your application's Gemfile:
+Add this line to your application's Gemfile:
 
 ```ruby
 gem 'hyper_iterator'
@@ -30,7 +30,7 @@ And then execute:
 Or install it yourself as:
 
     $ gem install hyper_iterator
- -->
+
 ## Available Methods (adding more)
 
 - `each_slice!`
@@ -172,6 +172,11 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/edmundleex/hyper_iterator. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
+## TODO
+
+- [ ] `each_slice!` should go to `Enumerable` module
+- [ ] `each!` for `Hash`
+- [ ] More comon iterators...
 
 ## License
 
