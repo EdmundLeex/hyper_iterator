@@ -1,5 +1,5 @@
 require 'benchmark'
-require_relative '../../lib/hyper_iterator'
+require_relative '../lib/hyper_iterator'
 
 class Thing; end
 
