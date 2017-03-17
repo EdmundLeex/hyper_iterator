@@ -1,5 +1,6 @@
 require_relative "./hyper_iterator/version"
-Dir['./lib/iterators/*.rb'].each { |f| require f }
+require_relative "./iterators/each_bang"
+require_relative "./iterators/each_slice_bang"
 
 module HyperIterator
   AVAILABLE_METHODS = [
@@ -8,6 +9,4 @@ module HyperIterator
   ].freeze
 end
 
-class Array
-  include HyperIterator
-end
+Array.include HyperIterator
