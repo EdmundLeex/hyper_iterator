@@ -1,3 +1,4 @@
+[![Gem Version](https://badge.fury.io/rb/hyper_iterator.svg)](https://badge.fury.io/rb/hyper_iterator)
 [![Build Status](https://travis-ci.org/EdmundLeex/hyper_iterator.svg?branch=master)](https://travis-ci.org/EdmundLeex/hyper_iterator)
 
 # HyperIterator
