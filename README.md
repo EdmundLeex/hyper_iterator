@@ -23,6 +23,12 @@ Add this line to your application's Gemfile:
 gem 'hyper_iterator'
 ```
 
+Or use it with Rails
+
+```ruby
+gem 'hyper_iterator-rails'
+```
+
 And then execute:
 
     $ bundle
