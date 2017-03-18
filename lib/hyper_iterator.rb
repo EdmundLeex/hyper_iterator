@@ -7,6 +7,10 @@ module HyperIterator
     :each_slice!,
     :each!
   ].freeze
+
+  def self.each!(arr)
+    arr.each! { |el| yield el }
+  end
 end
 
 Array.include HyperIterator

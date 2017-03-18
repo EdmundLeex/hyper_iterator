@@ -58,4 +58,21 @@ class EachBangTest < Minitest::Test
 
     assert_raises(LocalJumpError) { arr.each! }
   end
+
+  def test_that_it_can_use_class_method
+    arr = (1..10).to_a
+    new_arr_1 = []
+    new_arr_2 = []
+
+    arr.each do |el|
+      new_arr_1 << el * el
+    end
+
+    HyperIterator.each!(arr) do |el|
+      new_arr_2 << el * el
+    end
+
+    assert new_arr_1 == new_arr_2
+    assert arr.empty?
+  end
 end

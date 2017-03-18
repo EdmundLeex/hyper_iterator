@@ -35,6 +35,9 @@ Or install it yourself as:
 
 - `each_slice!`
 - `each!`
+- `HyperIterator.each!`: This is the same as `each!`. But it takes an array as argument. 
+This is added because there are gems that implement their own `each` method (e.g. the pg 
+gem). Instead of monkey patching all the gems out there, this is a compromise for flexibility.
 
 ## Gotcha
 
