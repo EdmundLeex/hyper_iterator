@@ -1,3 +1,12 @@
+### 3/18/17
+
+- Created [hyper_iterator-rails](https://github.com/EdmundLeex/hyper_iterator-rails) as 
+the adapter to Rails, since ActiveRecord implements its own `each` method
+- Added `HyperIterator.each!(array)` as a backup method. `each` is a widely implemented 
+method in many gems (e.g. the one we need to deal with is the pg gem). Because of that 
+adding this method that takes an array as argument can be more versatile without monkey 
+patching for each individual library.
+
 ### 3/16/17
 
 - Tweak the two benchmark file and made it work
