@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class EachBangTest < Minitest::Test
+class ArrayEachBangTest < Minitest::Test
   def test_that_it_yield_block
     arr = (1..10).to_a
     arr_dup = arr.dup
@@ -53,7 +53,7 @@ class EachBangTest < Minitest::Test
     assert arr.size == arr_size
   end
 
-  def test_that_it_rails_error_if_not_block_given
+  def test_that_it_raises_error_if_not_block_given
     arr = (1..10).to_a
 
     assert_raises(LocalJumpError) { arr.each! }

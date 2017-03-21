@@ -8,9 +8,11 @@ module HyperIterator
     :each!
   ].freeze
 
-  def self.each!(arr)
-    arr.each! { |el| yield el }
+  def self.each!(iterable)
+    iterable.each! { |el| yield el }
   end
 end
 
+Array.include HyperIterator::EachBang
+Hash.include HyperIterator::EachBang
 Array.include HyperIterator
