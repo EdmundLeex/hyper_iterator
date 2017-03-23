@@ -1,3 +1,8 @@
+### 3/23/17
+
+- Adding `Hash#each!` See the branch each-bang-hash
+- It seems to be significantly slower than the native `each`. hmmm why?
+
 ### 3/18/17
 
 - Created [hyper_iterator-rails](https://github.com/EdmundLeex/hyper_iterator-rails) as 
