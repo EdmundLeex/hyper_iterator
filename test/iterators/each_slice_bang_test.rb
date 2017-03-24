@@ -94,4 +94,12 @@ class EachSliceBangTest < Minitest::Test
 
     assert_raises(LocalJumpError) { arr.each_slice!(2) }
   end
+  
+  def test_that_it_rails_error_if_not_valid_each_slice
+    arr = (1..10).to_a
+
+    assert_raises(ArgumentError) { arr.each_slice!(0) }
+    assert_raises(ArgumentError) { arr.each_slice!(-1) }
+    assert_raises(ArgumentError) { arr.each_slice!('s') }
+  end
 end
