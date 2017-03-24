@@ -1,6 +1,6 @@
 module HyperIterator
   def each_slice!(slice_size)
-    raise ArgumentError, "invalid slice size" if slice_size.is_a?(Integer) || slice_size <= 0
+    raise ArgumentError, "invalid slice size" if slice_size.nil? || slice_size.is_a?(Integer) || slice_size <= 0
     
     i = 0
 
