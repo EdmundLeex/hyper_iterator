@@ -3,7 +3,7 @@ require_relative '../../lib/hyper_iterator'
 $stdout.sync = true
 
 puts
-puts '----------------- Hash#each! -----------------'
+puts '----------------- Hash#each -----------------'
 puts '#i    user      system      total       real'
 
 base_hash = {}
