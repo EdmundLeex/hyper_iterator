@@ -23,9 +23,9 @@ class HashEachBangTest < Minitest::Test
     assert vals == ord_range
   end
 
-  def test_that_it_remove_elements_from_array_on_the_fly
+  def test_that_it_sets_all_values_to_nil_on_the_fly
     @hash.each! {}
-    assert @hash.count == 0
+    assert @hash.values.all?(&:nil?)
   end
 
   def test_that_it_returns_nil
@@ -83,6 +83,6 @@ class HashEachBangTest < Minitest::Test
 
     assert keys_1 == keys_2
     assert vals_1 == vals_2
-    assert hash_2.empty?
+    assert hash_2.values.all?(&:nil?)
   end
 end
