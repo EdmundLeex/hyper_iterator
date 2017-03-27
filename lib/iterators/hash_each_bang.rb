@@ -1,9 +1,9 @@
 module HyperIterator
   module HashEachBang
     def each!
-      while count > 0
-        yield first
-        delete first[0]
+      each do |pair|
+        yield pair
+        self[pair[0]] = nil
       end
       nil
     end
