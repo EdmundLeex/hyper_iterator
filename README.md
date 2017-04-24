@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/EdmundLeex/hyper_iterator.svg?branch=master)](https://travis-ci.org/EdmundLeex/hyper_iterator)
+[![Coverage Status](https://coveralls.io/repos/github/EdmundLeex/hyper_iterator/badge.svg?branch=)](https://coveralls.io/github/EdmundLeex/hyper_iterator?branch=)
 
 # HyperIterator
 
