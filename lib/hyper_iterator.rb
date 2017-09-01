@@ -1,5 +1,6 @@
 require_relative "./hyper_iterator/version"
 require_relative "./iterators/each_bang"
+require_relative "./iterators/hash_each_bang"
 require_relative "./iterators/each_slice_bang"
 
 module HyperIterator
@@ -14,5 +15,5 @@ module HyperIterator
 end
 
 Array.include HyperIterator::EachBang
-Hash.include HyperIterator::EachBang
+Hash.include HyperIterator::HashEachBang
 Array.include HyperIterator

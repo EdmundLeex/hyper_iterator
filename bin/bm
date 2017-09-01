@@ -2,11 +2,14 @@
 
 docker_command="docker run -m=4m -v `pwd`:`pwd` -w `pwd` hyper_iterator ruby ./benchmark/memory_bm"
 if [ "$1" = "each!" ] || [ "$1" = 1 ]; then
-  eval "$docker_command/each.rb"
-  eval "$docker_command/each_bang.rb"
+  eval "$docker_command/array_each.rb"
+  eval "$docker_command/array_each_bang.rb"
 elif [ "$1" = "each_slice!" ] || [ "$1" = 2 ]; then
   eval "$docker_command/each_slice.rb"
   eval "$docker_command/each_slice_bang.rb"
+elif [ "$1" = 3 ]; then
+  eval "$docker_command/hash_each.rb"
+  eval "$docker_command/hash_each_bang.rb"
 else
   echo 'Please specify method for benchmarking. You can choose anyone from below:'
   echo '1. each!'
